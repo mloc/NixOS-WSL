@@ -144,8 +144,8 @@ in
     # Make sure the WSLg X11 socket is available if /tmp is mounted to something else
     systemd.mounts = [rec {
       description = "Mount WSLg X11 socket";
-      what = "${cfg.wslConf.automount.root}/wslg/.X11-unix/X0";
-      where = "/tmp/.X11-unix/X0";
+      what = "${cfg.wslConf.automount.root}/wslg/.X11-unix";
+      where = "/tmp/.X11-unix";
       type = "none";
       options = "bind";
       after = [ "nixos-wsl-migration-x11mount.service" ];
